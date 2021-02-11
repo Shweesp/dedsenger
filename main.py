@@ -1,6 +1,5 @@
 # Interfaces
 import main_ui, login_ui
-import config
 
 # Sys libs
 import threading, socket

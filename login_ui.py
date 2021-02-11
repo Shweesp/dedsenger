@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'login.ui'
+# Form implementation generated from reading ui file '.\login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -14,7 +14,26 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(460, 436)
+        Form.resize(440, 440)
+        Form.setMinimumSize(QtCore.QSize(440, 440))
+        Form.setMaximumSize(QtCore.QSize(440, 440))
+        font = QtGui.QFont()
+        font.setFamily("MS UI Gothic")
+        font.setPointSize(8)
+        font.setKerning(True)
+        Form.setFont(font)
+        Form.setStyleSheet("QWidget {\n"
+"    background-color: #0b172a;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    background-color: #bc4123\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    border: 2px solid #bc4123\n"
+"}")
         self.gridLayoutWidget = QtWidgets.QWidget(Form)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(50, 40, 331, 321))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -22,24 +41,51 @@ class Ui_Form(object):
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
         self.label_3 = QtWidgets.QLabel(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.lineEdit_3.setFont(font)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.gridLayout.addWidget(self.lineEdit_3, 2, 1, 1, 1)
         self.lineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.lineEdit.setFont(font)
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 1)
         self.label = QtWidgets.QLabel(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label.setFont(font)
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(13)
+        self.lineEdit_2.setFont(font)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.gridLayout.addWidget(self.lineEdit_2, 1, 1, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
         self.pushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(21)
+        font.setUnderline(False)
+        font.setKerning(True)
+        self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 4, 0, 1, 2)
 
@@ -49,7 +95,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_3.setText(_translate("Form", "Your port"))
-        self.label.setText(_translate("Form", "Nickname"))
-        self.label_2.setText(_translate("Form", "Server IP"))
-        self.pushButton.setText(_translate("Form", "Connect"))
+        self.label_3.setText(_translate("Form", "YOUR PORT"))
+        self.label.setText(_translate("Form", "NICKNAME"))
+        self.label_2.setText(_translate("Form", "SERVER IP"))
+        self.pushButton.setText(_translate("Form", "CONNECT"))
