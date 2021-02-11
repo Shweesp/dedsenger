@@ -1,4 +1,4 @@
-host = "192.168.1.100"
-port = 5001
+host = "YOUR INTERFACE"
+port = your port
 
-server = ("84.201.169.213", 5000)
+server = ("SERVER IP", 5000)
