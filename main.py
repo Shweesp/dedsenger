@@ -13,9 +13,9 @@ from time import sleep
 from PyQt5 import QtWidgets
 
 
-# Main class for app
+# Main class for main window
 class Messenger(QtWidgets.QMainWindow, main_ui.Ui_MainWindow):
-	def __init__(self, nickname, ip, port):
+	def __init__(self, nickname, ip):
 		super().__init__()
 		self.setupUi(self)
 
@@ -23,7 +23,6 @@ class Messenger(QtWidgets.QMainWindow, main_ui.Ui_MainWindow):
 
 		# Socket creating
 		self._s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		self._s.bind(("0.0.0.0", int(port)))
 		fcntl(self._s, F_SETFL, NBLOCK)
 
 		# Receving thread
@@ -84,6 +83,7 @@ class Messenger(QtWidgets.QMainWindow, main_ui.Ui_MainWindow):
 	def closeEvent(self, event):
 		self.recv_T_run = False # We have to close the thread
 		self.recv_T.join()
+		self._s.close()
 		event.accept() # Accept window closing
 
 
@@ -99,7 +99,7 @@ class Login(QtWidgets.QMainWindow, login_ui.Ui_Form):
 
 	def button_handler(self):
 		# Form - nickname, server's IP, user's port
-		form = [self.lineEdit.text(), self.lineEdit_2.text(), self.lineEdit_3.text()]
+		form = [self.lineEdit.text(), self.lineEdit_2.text()]
 
 		# Is form valid?
 		if self._check_valid(form):
@@ -114,13 +114,9 @@ class Login(QtWidgets.QMainWindow, login_ui.Ui_Form):
 		return True
 
 
-	def closeEvent(self, event):
-		print("Close button was pressed.")
-		event.accept()
-
 # Main window
 def main(form):
-	window = Messenger(form[0], form[1], form[2])
+	window = Messenger(form[0], form[1])
 	window.show()
 
 if __name__ == "__main__":
