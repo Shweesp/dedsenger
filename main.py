@@ -23,7 +23,7 @@ class Messenger(QtWidgets.QMainWindow, main_ui.Ui_MainWindow):
 
 		# Socket creating
 		self._s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		fcntl(self._s, F_SETFL, NBLOCK)
+		self._s.setblocking(0)
 
 		# Receving thread
 		self.recv_T_run = True
@@ -61,6 +61,8 @@ class Messenger(QtWidgets.QMainWindow, main_ui.Ui_MainWindow):
 			else:
 				message = data.decode("utf-8")
 				self._print_message(message)
+				
+		return None
 
 
 	# Print message on the text browser
